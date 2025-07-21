@@ -1,0 +1,158 @@
+:root {
+  --background-color: #181c24;
+  --default-color: #b0b8d1;
+  --accent-color: #3b82f6;
+}
+
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(24, 28, 36, 0.95);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 3px solid #3b82f6;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar h2 {
+  color: #fff;
+  font-size: 1.75rem;
+  margin: 1rem 0;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.sidebar nav {
+  margin-top: 2rem;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: #b0b8d1;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  gap: 1rem;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar nav a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: #3b82f6;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  border-radius: 0 2px 2px 0;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: rgba(59, 130, 246, 0.1);
+  color: #fff;
+  padding-left: 1.5rem;
+}
+
+.sidebar nav a:hover::before,
+.sidebar nav a.active::before {
+  transform: scaleY(1);
+}
+
+.nav-icon {
+  font-size: 1.4rem;
+  min-width: 24px;
+  transition: transform 0.3s ease;
+}
+
+.nav-label {
+  font-weight: 500;
+}
+
+.sidebar nav a:hover .nav-icon,
+.sidebar nav a.active .nav-icon {
+  transform: translateX(3px);
+  color: #3b82f6;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 1rem;
+  }
+
+  .profile-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .sidebar h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .sidebar nav {
+    margin-top: 1rem;
+  }
+
+  .sidebar nav a {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+  }
+
+  .nav-icon {
+    font-size: 1.2rem;
+  }
+} 
